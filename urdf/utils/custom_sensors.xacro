@@ -42,7 +42,6 @@
             <axis rpy="0 0 0" xyz="0 0 0"/>
         </joint>
 
-
         <link name="sensor_${id}">
             <visual>
                 <geometry>
@@ -60,18 +59,18 @@
             <inertial>
                 <mass value="0" />
                 <origin rpy="0 0 0" xyz="0 0 0" />
-                <xacro:box_inertia mass="${mass}" x="${sensor_length}" y="${sensor_width}" z="${sensor_height}" />
+                <xacro:box_inertia mass="0.001" x="${sensor_length}" y="${sensor_width}" z="${sensor_height}" />
             </inertial>
-
         </link>
+
         <joint name="${plink}_sensor_${id}" type="fixed">
             <parent link="sensor_${id}_mount_point" />
             <child link="sensor_${id}" />
-            <origin xyz="0 0 0" rpy="0 0 1.57" />
+            <origin xyz="-${sensor_width / 2} 0 0" rpy="0 0 1.57" />
             <axis rpy="0 0 0" xyz="0 0 0"/>
         </joint>
 
-        <gazebo reference="sensor_${id}"> 
+        <gazebo reference="sensor_${id}">
             <sensor type="ray" name="sensor_${id}_instance">
                 <pose>0 0 0 0 0 0</pose>
                 <ray>
