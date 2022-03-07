@@ -10,9 +10,9 @@
     <xacro:property name="sensor_length" value="0.0025" />
     <xacro:property name="sensor_height" value="0.004" />
     <xacro:property name="originrpy" value="0 0 0" />
-    <xacro:property name="originxyz" value="0 0 0" />
+    <xacro:property name="originxyz" value="0 0 -0.003" />
 
-    <xacro:macro name="csensor" params="plink id mass originrpy originxyz jointxyz jointrpy">
+    <xacro:macro name="csensor" params="plink id mass jointxyz jointrpy">
 
         <link name="sensor_${id}_mount_point">
             <visual>
