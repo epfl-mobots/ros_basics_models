@@ -16,7 +16,7 @@
 
     <arg name="ns" default="/" />
     <group ns="$(arg ns)">
-        <node name="obstacle_spawn" pkg="gazebo_ros" type="spawn_model" output="screen" args="-urdf -param obstacle_description -model obstacle -x 0.0 -y $(arg y) -z $(arg z)" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@' "/>
+        <node name="obstacle_spawn" pkg="gazebo_ros" type="spawn_model" output="screen" args="-urdf -param obstacle_description -model obstacle -x $(arg x) -y $(arg y) -z $(arg z)" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@' "/>
     </group>
 
 </launch>
